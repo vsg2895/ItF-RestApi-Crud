@@ -68,7 +68,7 @@ class MacroServiceProvider extends ServiceProvider
             Http::macro($external_api_alias, function ($params) use ($external_api_alias) {
                 $correspondedConfigName = 'external_apis.' . $external_api_alias . '.base_url';
                 $url = count($params) ? Config::get($correspondedConfigName) . '?' . http_build_query($params)
-                    : Config::get($correspondedConfigName);
+                                      : Config::get($correspondedConfigName);
                 return Http::withHeaders([
                     'Content-Type' => 'application/json',
                 ])->get($url);

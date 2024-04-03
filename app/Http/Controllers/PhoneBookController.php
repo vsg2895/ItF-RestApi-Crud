@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Response;
 class PhoneBookController extends Controller
 {
 
-    public function __construct(private readonly PhoneBookInterface $phoneBookRepository){ }
+    public function __construct(private readonly PhoneBookInterface $phoneBookRepository)
+    {
+    }
 
     /**
      * Display a listing of the resource.

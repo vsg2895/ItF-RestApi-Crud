@@ -28,8 +28,8 @@ class UpdatePhoneBookRequest extends FormRequest
             'first_name' => ['required'],
             'last_name' => ['required'],
             'phone_number' => ['required', 'regex:/^(\+\d{1,3}[- ]?)?\d{12}$/'],
-            'country_code' => ['required', 'string'],
-            'timezone_name' => ['required'],
+            'country_code' => ['required', 'string', new CountryCodeRule],
+            'timezone_name' => ['required', new TimezoneRule],
         ];
     }
 
